@@ -28,7 +28,7 @@ function Navbar(props) {
   return (
     <div className="Navbar">
       <div className="nav-container">
-        <h1 className="logo">.News</h1>
+        <h1 className="logo">InformedNow</h1>
         <div className={`nav-items ${isNavbarOpen ? "open" : ""}`}>
           <li className="nav-li">
             <NavLink to="/">Home</NavLink>
