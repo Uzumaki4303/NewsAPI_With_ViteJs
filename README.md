@@ -1,2 +1,8 @@
-# NewsAPI_With_ViteJs
-Stay informed with our News Website , offering real-time updates across all categories like politics, tech, entertainment, sports, and global news. Built with React and Vite, our site provides a seamless experience to keep you updated on the stories that matter. Join us for accurate, up-to-date news coverage.
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

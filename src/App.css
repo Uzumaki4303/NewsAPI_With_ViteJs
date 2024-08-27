@@ -1,0 +1,499 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*{
+  font-family: 'Poppins',sans-serif;
+  font-size: 1rem;
+}
+/* Navbar page css */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    rgb(19, 196, 92),
+    rgba(30, 136, 150, 0.7)
+  );
+}
+
+.logo {
+  padding: 0 80px;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.nav-container {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-items {
+  background-color: transparent;
+  display: flex;
+  width: 55%;
+  justify-content: space-around;
+}
+
+.nav-li {
+  padding: 0 10px;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-li a {
+  text-decoration: none;
+}
+
+.nav-li a:hover {
+  color: rgb(209, 21, 21);
+  border-bottom: 2px solid blueviolet;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-li {
+  position: relative;
+}
+
+.suggestions {
+  width: 150px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.suggestion {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-li .suggestions {
+  display: none;
+}
+
+.nav-li .suggestions.popover-visible {
+  display: block !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.hamberger, .hamberger-icon , .cross-icon{
+  display: none;
+  list-style-type: none;
+  text-decoration: none;
+  width: 35px;
+  cursor: pointer;
+}
+#categories{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#down_arrow{
+  width: 17px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+
+}
+#categories:hover{
+  color: rgb(209, 21, 21);
+  border-bottom: 2px solid blueviolet;
+
+}
+#categories:hover #down_arrow{
+  filter: invert(28%) sepia(96%) saturate(7471%) hue-rotate(356deg) brightness(102%) contrast(104%); /* Red color effect */
+
+}
+
+/* news css */
+.news{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 40px;
+}
+
+.card {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #f5f5f5;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: 1s all ease;
+
+}
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 2/2;
+
+  background-color: #ffcaa6;
+  border-radius: .5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-title{
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+.card-description {
+  max-height: 100px;
+  overflow-x: hidden;
+}
+
+.card:hover .card-img-top {
+  border: 1px solid lightgray;
+  box-shadow: 0px 8px 5px 0px rgb(184, 177, 177);
+  transform: translateY(-5%) scaleZ(.5);
+  transition: 2s all ease;
+  object-fit: cover;
+} 
+ 
+.card:hover{
+  box-shadow: 5px 8px 15px 3px rgb(184, 177, 177);
+} 
+.card:hover .btn{
+  display: inherit;
+}
+
+.btn {
+  display: none;
+  padding: 0.5rem; 
+  background-color: #1aa06d;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: none;
+}
+
+@media screen and (max-width: 700px) and (min-width: 300px) {
+  *{
+    font-size: 15px;
+  }
+  .card-container{
+    padding: 20px 10px;
+    gap: 30px;
+  }
+  .card{
+    width:16rem;
+    max-width: 250px;
+  }
+  .card-img-top {
+    width: 100%;
+    aspect-ratio: 2.7/2;
+  }
+ 
+}
+
+/* search news */
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+
+.form {
+  border: 2px solid green;
+  --timing: 0.3s;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg,#fff);
+}
+/* styling of Input */
+.input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+.input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
+
+/* Footer css */
+.footer{
+  padding: 0;
+  height: auto;
+  display: grid;
+}
+.ft-container{
+  display:inline-flex;
+  justify-content: space-evenly;
+}
+.ft-ul{
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+
+}
+.ft-li{
+  padding: 5px 0;
+  list-style: none;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.ft-li a{
+  text-decoration: none;
+  color: gray;
+}
+.ft-li a:hover{
+  color: aqua;
+}
+.get-in-touch{
+  margin-top: 16px;
+  width: 220px;
+  height: fit-content;
+  text-transform: capitalize;
+}
+.get-in-touch p{
+  color: gray;
+}
+.ft-imgs{
+  display: flex; 
+}
+.ft-imgs img{
+  width: 40px;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+.ft-msg{
+  margin: 30px 42% 50px;
+  width: fit-content;
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  text-transform:none;
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+}
+.ft-msg:hover{
+  color: rgb(38, 209, 209);
+}
+
+@media screen and (max-width : 850px) {
+  .footer{
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+  .ft-container{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .compani-info , .features , .resources , .get-in-touch{
+      margin-left: 30px;
+      width: 203px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  .ft-ul,.ft-li{
+      padding: 2px 0;
+  }
+  .ft-msg{
+      padding: 30px 0;
+      margin: 5px 0;
+      width: 50%;
+      text-align: center;
+  } 
+  .form{
+    width: 70%;
+  }  
+  .Navbar{
+    width: 100%;
+  }
+  .nav-container{
+    display: flex;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width : 500px) {
+  .ft-msg{
+      width: 71%;
+  } 
+}
+
+.Navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items.open {
+  display: block; /* Display nav items in a block for mobile view */
+}
+
+.nav-li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger-icon {
+  display: block;
+}
+
+.cross-icon {
+  display: none;
+}
+
+.hamburger img.hide {
+  display: none;
+}
+
+.hamburger img:not(.hide) {
+  display: block;
+}
+
+#down_arrow{
+  filter: invert(48%) sepia(63%) saturate(6072%) hue-rotate(220deg) brightness(102%) contrast(104%); /* Approximate the color #1130dd */
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  .nav-items.open {
+    display: flex;
+  }
+
+  .nav-li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
