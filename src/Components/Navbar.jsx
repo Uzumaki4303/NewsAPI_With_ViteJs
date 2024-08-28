@@ -26,9 +26,10 @@ function Navbar(props) {
   };
 
   return (
-    <div className="Navbar">
+    <nav className="Navbar">
+
       <div className="nav-container">
-        <h1 className="logo">InformedNow</h1>
+        <h1 className="logo">Informed<span>Now</span></h1>
         <div className={`nav-items ${isNavbarOpen ? "open" : ""}`}>
           <li className="nav-li">
             <NavLink to="/">Home</NavLink>
@@ -96,7 +97,7 @@ function Navbar(props) {
           />
         </li>
       </div>
-    </div>
+  </nav>
   );
 }
 
