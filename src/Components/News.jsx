@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import no_img from "../assets/error.jpg";
 import { useOutletContext } from 'react-router-dom';
 import '../App.css';
+const apiKey = import.meta.env.VITE_NEWS_API_KEY
 
 export default function News() {
   const { selectedNews, clearSelectedNews } = useOutletContext();
@@ -14,7 +15,7 @@ export default function News() {
 
     try {
       let res = await fetch(
-        `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&sortBy=published&language=en&apiKey=5e0bec6353114cc987ed659cf0241f97`
+        `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&sortBy=published&language=en&apiKey=${apiKey}`
       );
       let data = await res.json();
       console.log("Full response data:", data);
@@ -153,7 +154,7 @@ export default function News() {
             </div>
           ))
         ) : (
-          <div>No news articles found</div>
+          <div>News articles loading...</div>
         )}
       </div>
     </div>
