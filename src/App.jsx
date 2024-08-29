@@ -1,19 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from '../src/Components/Layout';
 import News from '../src/Components/News';
-import './App.css'
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router basename="/NewsAPI_With_ViteJs">
       <Routes>
-        <Route path='/' element={<Layout/>} >
+        <Route path='/' element={<Layout />} >
           <Route index element={<News />} /> {/* Render News by default at root path */}
-          <Route path='news' element={<News/>} />
+          <Route path='categories' element={<News />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
-export default App
+export default App;
