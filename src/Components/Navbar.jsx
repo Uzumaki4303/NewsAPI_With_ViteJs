@@ -44,7 +44,7 @@ function Navbar(props) {
           </li>
 
           <li className="nav-li">
-            <NavLink to="/news" onClick={handleTogglePopover}>
+            <NavLink onClick={handleTogglePopover}>
               <span id="categories">
                 categories
                 <img id='down_arrow' src={down_arrow} alt="" />

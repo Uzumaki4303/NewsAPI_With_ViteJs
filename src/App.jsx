@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/NewsAPI_With_ViteJs">
+    <Router basename="/NewsAPI_With_ViteJs/">
       <Routes>
         <Route path='/' element={<Layout />} >
           <Route index element={<News />} /> {/* Render News by default at root path */}

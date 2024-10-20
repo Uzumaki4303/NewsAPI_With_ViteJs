@@ -12,20 +12,20 @@ export default function News() {
 
   const fetchNews = async (searchQuery) => {
     if (!searchQuery) return; // Skip fetching if no search query is provided
-
+  
     try {
       let res = await fetch(
-        `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&sortBy=published&language=en&apiKey=${apiKey}`
+        `http://localhost:5000/api/news?q=${encodeURIComponent(searchQuery)}`
       );
       let data = await res.json();
       console.log("Full response data:", data);
-
+  
       if (res.status === 200) {
         const filteredData = data.articles.filter(
           (article) =>
             article.title !== "[Removed]" && article.description !== "[Removed]"
         );
-
+  
         setMyNews(filteredData);
         localStorage.setItem("newsData", JSON.stringify(filteredData));
         localStorage.setItem("newsFetchTime", Date.now());
